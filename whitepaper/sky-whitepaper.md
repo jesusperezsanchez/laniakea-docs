@@ -22,11 +22,11 @@ As of December 2025 (approximate snapshot; subject to change):
 
 Sky Ecosystem's USDS supply grew significantly in 2025 (often cited at ~86%), outpacing overall stablecoin market growth in the same period (often cited at ~50%). This growth occurred while Sky Ecosystem remained among the highest-earning protocols in decentralized finance.
 
-The broader opportunity: over $300 billion in stablecoins currently sit idle without earning yield — capital that naturally seeks returns.
+The broader opportunity is clear: more than $300B in stablecoins sits idle today without earning yield—capital that naturally seeks returns. USDS can aim for a larger role than “yield-bearing stablecoins” as a narrow category. In our view, it has the potential to become the most Ethereum-aligned stablecoin, combining deep DeFi composability with one of the most robust implementations of a decentralized stablecoin.
 
 ### How Sky Ecosystem Generates Revenue
 
-Sky Ecosystem generates revenue through the spread between what it earns on deployed capital (the "base rate") and what it pays to sUSDS holders (the "savings rate"). The difference constitutes net protocol revenue.
+Beyond the spread-driven model, it is important to account for the strategic value of building a highly liquid stablecoin. Deep liquidity enables USDS to serve as natural trading collateral and a primary quote asset across digital-asset markets, increasing its utility and adoption. A meaningful share of this liquidity is typically held in non–yield-bearing form (e.g., in DEX pools, exchange balances, and operational wallets). While this portion does not receive interest, it is critical to maintaining tight pricing, low slippage, and overall market confidence. In practice, this “non-remunerated” capital base can strengthen protocol economics: it supports the stablecoin’s liquidity and composability, and it can improve the system’s capacity to reinvest in protocol development—potentially enabling a more competitive savings rate over time without compromising sustainability.
 
 Revenue is generated through Sky Protocol from a diversified set of sources:
 
@@ -35,6 +35,7 @@ Revenue is generated through Sky Protocol from a diversified set of sources:
 - **U.S. Treasuries** — Low-risk yield from tokenized government securities
 - **Private credit** — CLO allocations and other credit strategies
 - **Delta-neutral strategies** — Market-neutral yield generation
+- **Market-making credit facilities** — Extending USDS liquidity to professional market makers (under strict risk controls) to support deep secondary-market liquidity and earn fees/spreads.
 
 This diversification can reduce reliance on any single market regime, and has historically helped dampen sensitivity to crypto price cycles relative to single-source protocols.
 
@@ -50,6 +51,8 @@ Key decentralization properties:
 - The protocol continues operating regardless of any single participant
 
 USDS is a decentralized yield-generating stablecoin focused on capital formation — distinct from payment stablecoins regulated under frameworks like the GENIUS Act.
+
+Decentralization can be further strengthened by deliberately expanding and prioritizing decentralized collateral types (e.g., trust-minimized on-chain assets) where risk-adjusted returns are competitive. This reduces reliance on centralized issuers and intermediaries, improves censorship-resistance, and helps ensure the protocol remains resilient under adverse regulatory or market conditions.
 
 ---
 
@@ -105,6 +108,19 @@ sUSDS (Savings USDS) is an ERC-4626 vault token representing a deposit in the Sk
 
 When users deposit USDS into the savings contract, they receive sUSDS tokens. The exchange rate between sUSDS and USDS increases over time as yield accrues. To withdraw, users simply redeem sUSDS for the increased amount of USDS.
 
+### USDETH: The ETH-Only Stablecoin
+
+USDETH is a complementary Sky stablecoin concept designed to maintain a 1:1 peg to the US dollar while being minted exclusively against ETH-native collateral. USDETH is intended to maximize Ethereum alignment, censorship-resistance, and simplicity by relying on a single, decentralized collateral base.
+
+| Property | Description |
+|----------|-------------|
+| Peg | 1:1 USD |
+| Backing | Overcollateralized by  ETH-only (ETH-native collateral and positions)|
+| Minting | mechanism Minted when users deposit ETH collateral into Sky Protocol|
+| Redemption | Redeemable by repaying the borrowed USDETH|
+
+When users deposit ETH into the USDETH collateral contracts, they can mint USDETH against their position, subject to collateralization requirements and protocol risk parameters set by governance. Because USDETH relies only on ETH-native collateral, it trades diversification for a cleaner decentralization profile—making it a natural option for users and integrations that prefer an ETH-only reserve model, while USDS remains the ecosystem’s scalable, diversified stablecoin for broader capital formation.
+
 ### SKY: The Governance Token
 
 Sky Protocol is community-governed through use of the SKY token. Holders who stake SKY actively participate in securing and directing the protocol.
@@ -121,9 +137,9 @@ Under current protocol parameters, as determined through decentralized governanc
 
 The SKY buyback and staking rewards mechanism uses protocol profits to repurchase SKY tokens on the open market. Since launching in February 2025, this mechanism has repurchased over $92.2 million in SKY — representing over 6.3% of the total 23.46 billion token supply.
 
-**3. Collateral Utility**
+**3. No Collateral Utility**
 
-The ability to use governance-participating (staked) SKY as collateral for borrowing USDS while continuing to earn staking rewards, effectively lowering borrowing costs without sacrificing governance participation or yield.
+Staked (governance-participating) SKY cannot be used as collateral to borrow USDS. Instead, SKY holders are rewarded directly for active governance participation—preserving governance alignment and long-term commitment without introducing collateral-related leverage or liquidation risk.
 
 ### Supply Dynamics
 
@@ -160,17 +176,14 @@ The Sky TMF is a sequential waterfall that distributes all protocol net revenue 
 
 | Step                              | Allocation                              | Purpose                                        |
 | --------------------------------- | --------------------------------------- | ---------------------------------------------- |
-| **1. Security & Maintenance**     | 21% (Genesis) / 4-10% (Post-Genesis)    | Core teams, security, risk management          |
-| **2. Aggregate Backstop Capital** | Variable (target: 1.5% of total supply) | Solvency buffer for bad debt protection        |
-| **3. Fortification Conserver**    | 20% × Net Revenue Ratio                 | Legal defense, resilience, unquantifiable risk |
-| **4. Smart Burn Engine**          | 10% × Net Revenue Ratio                 | SKY buybacks                                   |
-| **5. Staking Rewards**            | 100% of remainder                       | Distributed to SKY stakers                     |
+| **1. Security & Maintenance**     | 21% (Genesis) / 10-15% (Post-Genesis)    | Core teams, security, risk management, fortification     |
+| **2. Aggregate Backstop Capital** | Variable (target: 3% of total supply)   | Solvency buffer for bad debt 50/50 ETH/GOLD    |
+| **3. Smart Burn Engine**          | 20% × Net Revenue Ratio                 | SKY buybacks                                   |
+| **4. Staking Rewards**            | 100% of remainder                       | Distributed to SKY stakers                     |
 
-**Net Revenue Ratio:** A hyperbolic function that scales allocations based on total protocol net revenue. At low revenue, most surplus flows to staking rewards. As revenue grows, more flows to burn and fortification. The formula approaches 1.0 as revenue approaches the cap threshold.
+**Net Revenue Ratio:** A hyperbolic function that scales allocations based on total protocol net revenue. At low revenue, most surplus flows to staking rewards. As revenue grows, more flows to burn and fortification. The formula approaches 1.0 as revenue approaches the cap threshold.  Allocation grows with net revenue because larger scale requires greater legal infrastructure.
 
 **Aggregate Backstop Capital:** Fills dynamically based on how far the buffer is from its target. When empty, up to 50% of available funds flow to the buffer. When full, the step is skipped entirely.
-
-**Fortification Conserver:** An Alignment Conserver responsible for legal defense and resilience. Allocation grows with net revenue because larger scale requires greater legal infrastructure.
 
 ### The Smart Burn Engine
 
@@ -241,6 +254,8 @@ Sky Agents compete for capital allocation based on performance. The Agent with t
 ### Adding New Agents
 
 New Sky Agents are added through decentralized governance. The approval process includes evaluation of the Agent's strategy, team, risk framework, and operational infrastructure. Once approved, new Agents can immediately access capital from Sky Protocol within their governance-approved limits.
+
+In addition to onboarding new Agents prospectively, Sky should explore retrofunding mechanisms to reward initiatives that have already generated measurable value after receiving capital allocations. This could include retroactive compensation based on objective performance and impact metrics (e.g., net revenue contribution, risk-adjusted returns, liquidity/usage growth, and strategic ecosystem outcomes), with awards approved through decentralized governance. Retrofunding aligns incentives by encouraging Agents and contributors to focus on long-term value creation, knowing that exceptional outcomes can be recognized and compensated after the fact.
 
 For the complete list of Agent Framework primitives and technical specifications, see Appendix B.
 
